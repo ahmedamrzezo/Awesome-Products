@@ -2,3 +2,7 @@ h1 {
   color: var(--blue);
   margin: 3rem 0;
 }
+
+.btn-primary {
+  margin: 3rem 0;
+}
