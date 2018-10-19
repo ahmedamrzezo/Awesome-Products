@@ -1,0 +1,35 @@
+table {
+  border-radius: 8px;
+  box-shadow: 0 3px 15px rgba(36, 38, 39, 0.2);
+}
+
+th {
+  border-top: none;
+}
+
+tbody tr {
+  height: 80px;
+}
+
+tbody td {
+  vertical-align: middle;
+}
+
+img {
+  max-height: 80px;
+}
+
+.fa-trash {
+  background-color: var(--danger) !important;
+}
+
+.actions i {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding-top: 6px;
+  background-color: var(--blue);
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 0 5px;
+}
