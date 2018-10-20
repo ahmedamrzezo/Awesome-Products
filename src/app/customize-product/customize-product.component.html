@@ -1,0 +1,29 @@
+<form #form="ngForm" (submit)="addProduct(form)">
+  <div class="row">
+    <fieldset class="col form-group">
+      <input class="form-control" name="SKU" type="text" placeholder="Enter product SKU" required ngModel>
+    </fieldset>
+
+    <fieldset class="col form-group">
+      <input class="form-control" name="name" type="text" placeholder="Enter product name" required ngModel>
+    </fieldset>
+
+    <fieldset class="col form-group">
+      <input class="form-control" name="img_url" type="text" placeholder="Enter product image URL" required ngModel>
+    </fieldset>
+  </div>
+
+  <div class="row">
+    <fieldset class="col form-group">
+      <input class="form-control" name="category" type="text" placeholder="Enter product category" required ngModel>
+    </fieldset>
+
+    <fieldset class="col form-group">
+      <input class="form-control" name="price" type="number" placeholder="Enter product price" required ngModel>
+    </fieldset>
+    <fieldset class="col form-group">
+      <button type="submit" class="btn btn-sm btn-primary"><i class="fas fa-check"></i></button>
+    </fieldset>
+  </div>
+
+</form>

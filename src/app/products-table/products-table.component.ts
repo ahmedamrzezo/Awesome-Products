@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IProducts } from '../products/iproducts';
+import { NgForm } from '@angular/forms';
+import { ProductsService } from '../products/products.service';
 
 @Component({
   selector: 'app-products-table',
@@ -7,28 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsTableComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductsService) { }
 
-  products = [
-    {
-    SKU: `A44vd5`,
-    name: `Samsung TV`,
-    img_url: `./assets/images/samsung-tv.jpg`,
-    category: `Electronics`,
-    price: 499.99,
-    date: Date.now()
-    },
-    {
-      SKU: `W28SD1`,
-      name: `IPhone XS`,
-      img_url: `./assets/images/iphone-xs.jpg`,
-      category: `Electronics`,
-      price: 699.99,
-      date: Date.now()
-    }
-  ];
+  products: IProducts[] = [];
+
+  editProduct() {
+    alert('sacksm');
+  }
 
   ngOnInit() {
+    this.products = this.productService.getProducts();
   }
 
 }
