@@ -1,7 +1,7 @@
 <form #form="ngForm" (submit)="addProduct(form)">
   <div class="row">
     <fieldset class="col form-group">
-      <input class="form-control" name="SKU" type="text" placeholder="Enter product SKU" required ngModel>
+      <input class="form-control" name="SKU" type="text" maxlength="6"placeholder="Enter product SKU" required ngModel>
     </fieldset>
 
     <fieldset class="col form-group">
