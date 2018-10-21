@@ -22,7 +22,7 @@
       <td>{{ product.date | date }}</td>
       <td class="actions">
         <i class="fas fa-edit" (click)="editProduct()"></i>
-        <i class="fas fa-trash"></i>
+        <i class="fas fa-trash" (click)="deleteProduct(product.index)"></i>
       </td>
     </tr>
   </tbody>

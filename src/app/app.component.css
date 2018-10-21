@@ -1,8 +1,8 @@
 h1 {
   color: var(--blue);
-  margin: 3rem 0;
+  margin: 2rem 0;
 }
 
-.btn-primary {
-  margin-top: 3rem;
+.btn {
+  margin: 3rem 1rem 0 0;
 }

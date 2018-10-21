@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+
 import { IProducts } from '../products/iproducts';
-import { NgForm } from '@angular/forms';
 import { ProductsService } from '../products/products.service';
 
 @Component({
@@ -15,7 +15,17 @@ export class ProductsTableComponent implements OnInit {
   products: IProducts[] = [];
 
   editProduct() {
-    alert('sacksm');
+    alert('not editable yet!');
+  }
+
+  deleteProduct(index) {
+    const confirmation = confirm('Are you sure to delete this product');
+
+    if (confirmation === true) {
+      return this.productService.deleteProduct(index);
+    } else {
+      return false;
+    }
   }
 
   ngOnInit() {
