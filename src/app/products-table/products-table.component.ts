@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { IProducts } from '../products/iproducts';
 import { ProductsService } from '../products/products.service';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-products-table',
@@ -10,12 +11,14 @@ import { ProductsService } from '../products/products.service';
 })
 export class ProductsTableComponent implements OnInit {
 
-  constructor(private productService: ProductsService) { }
+  constructor(private productService: ProductsService, private ss: SharedService) { }
 
   products: IProducts[] = [];
 
-  editProduct() {
-    alert('not editable yet!');
+  editProduct(index: number) {
+    this.ss.change();
+    this.productService.isEditing = true;
+    this.productService.index = index;
   }
 
   deleteProduct(index) {

@@ -27,15 +27,25 @@ export class ProductsService {
     }
   ];
 
+  isEditing: boolean;
+  index: number;
+
   getProducts() {
     return this.products;
   }
+  setProduct(submittedProduct) {
+    submittedProduct.date = Date.now();
+    submittedProduct.index = this.products.length - 1;
+    if (this.isEditing === true) {
+      this.products.splice(this.index, 1);
+    } else {
+      submittedProduct.index++;
+    }
+    return this.products.push(submittedProduct);
+  }
 
-  setProduct(product) {
-    product.date = Date.now();
-    product.index = this.products.length - 1;
-    product.index++;
-    return this.products.push(product);
+  updateProduct() {
+    return true;
   }
 
   deleteProduct(index: number) {

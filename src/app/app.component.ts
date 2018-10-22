@@ -1,17 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductsService } from './products/products.service';
+import { SharedService } from './shared/shared.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(private productService: ProductsService) {}
+export class AppComponent implements OnInit {
+  constructor(private productService: ProductsService, private ss: SharedService) {
+    this.formIsShown = false;
+  }
 
   logo = 'Awesome-Products';
 
-  formIsShown = false;
+  subscription: any;
+  formIsShown: Boolean;
   modelIsShown = false;
 
   products: Object;
@@ -22,5 +26,9 @@ export class AppComponent {
     }
     this.products = JSON.stringify(this.productService.getProducts());
     this.modelIsShown = true;
+  }
+
+  ngOnInit(): void {
+    this.subscription = this.ss.getEmittedValue().subscribe(val => this.formIsShown = val);
   }
 }
