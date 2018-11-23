@@ -8,7 +8,7 @@ import { SharedService } from './shared/shared.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private productService: ProductsService, private ss: SharedService) {
+  constructor(public productService: ProductsService, private ss: SharedService) {
     this.formIsShown = false;
   }
 
