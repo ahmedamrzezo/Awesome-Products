@@ -13,7 +13,7 @@
 
   <tbody>
     <tr
-    *ngFor="let product of products">
+    *ngFor="let product of products; let i = index">
       <td>{{ product.SKU | uppercase }}</td>
       <td>{{ product.name }}</td>
       <td><img src="{{ product.img_url }}"></td>
@@ -21,8 +21,8 @@
       <td>{{ product.price | currency:'USD' }}</td>
       <td>{{ product.date | date }}</td>
       <td class="actions">
-        <i class="fas fa-edit" (click)="editProduct(product.index)"></i>
-        <i class="fas fa-trash" (click)="deleteProduct(product.index)"></i>
+        <i class="fas fa-edit" (click)="editProduct(i)"></i>
+        <i class="fas fa-trash" (click)="deleteProduct(i)"></i>
       </td>
     </tr>
   </tbody>
